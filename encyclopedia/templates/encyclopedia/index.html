@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Welcome to Wiki</h1>
+    <p><B>Wiki</B> is a website like <a href="https://www.wikipedia.org/">Wikipedia</a> made by a student as a project for the web programming course. It is only for educational purpose!</p>
+    <h1>All Pages</h1>
+
+    <ul>
+        {% for entry in entries %}
+        <li><a href="{% url 'entry' title=entry %}">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
